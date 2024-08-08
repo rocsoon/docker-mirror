@@ -1,2 +1,1 @@
-technosoft2000/calibre-web:latest
-
+calibre-web:latest
