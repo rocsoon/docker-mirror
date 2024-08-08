@@ -14,11 +14,12 @@ do
     echo "pull image - $image"
     docker pull $image
 
-    echo "tag image - $image"
-    docker tag $image $DOCKER_REGISTRY_URL/$DOCKER_REGISTRY_NAMESPACE/calibre-web:latest
+    tag_image=${image/\//-}
+    echo "tag image - $tag_image"
+    docker tag $image $DOCKER_REGISTRY_URL/$DOCKER_REGISTRY_NAMESPACE/$tag_image
 
-    echo "push image - $image"
-    docker push $DOCKER_REGISTRY_URL/$DOCKER_REGISTRY_NAMESPACE/calibre-web:latest
+    echo "push image - $tag_image"
+    docker push $DOCKER_REGISTRY_URL/$DOCKER_REGISTRY_NAMESPACE/$tag_image
 
 done < "$filename"
 
