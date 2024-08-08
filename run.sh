@@ -15,10 +15,10 @@ do
     docker pull $image
 
     echo "tag image - $image"
-    docker tag $image $DOCKER_REGISTRY_URL/$DOCKER_REGISTRY_NAMESPACE/$image
+    docker tag $image $DOCKER_REGISTRY_URL/$DOCKER_REGISTRY_NAMESPACE/calibre-web:latest
 
     echo "push image - $image"
-    docker push $DOCKER_REGISTRY_URL/$DOCKER_REGISTRY_NAMESPACE/$image
+    docker push $DOCKER_REGISTRY_URL/$DOCKER_REGISTRY_NAMESPACE/calibre-web:latest
 
 done < "$filename"
 
