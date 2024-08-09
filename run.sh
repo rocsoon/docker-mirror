@@ -14,7 +14,7 @@ do
     echo "pull image - $image"
     docker pull $image
 
-    tag_image=${image//\//-}
+    tag_image=$(echo $image | sed 's/\//\-/g')
 
     echo "tag image - $tag_image"
     docker tag $image $DOCKER_REGISTRY_URL/$DOCKER_REGISTRY_NAMESPACE/$tag_image
