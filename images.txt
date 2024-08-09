@@ -1,1 +1,1 @@
-technosoft2000/calibre-web:v1.6.0
+johngong/calibre-web:0.6.23-7.9.0
